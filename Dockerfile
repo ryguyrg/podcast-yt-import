@@ -36,4 +36,4 @@ ADD client_secrets.json /podcast-yt-import/
 
 WORKDIR /podcast-yt-import/
 
-CMD ["./get_all_podcasts.py"]
+CMD ["python", "get_all_podcasts.py"]

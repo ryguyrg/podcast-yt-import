@@ -24,7 +24,7 @@ for item in root.iter('item'):
 #  print podcast_title, ' @ ', podcast_url
   if (not os.path.isfile("./podcasts/%s" % (podcast_file))):
     urllib.urlretrieve(podcast_url, "./podcasts/%s" % (podcast_file))
-    call(["./make_video.sh", "./podcasts/%s" % (podcast_file), podcast_title])
+    call(['bash', './make_video.sh', "./podcasts/%s" % (podcast_file), podcast_title])
     podcast_video_file = re.sub(r'\.mp3', '-video.mp4', podcast_file)
     call(["python", './upload_youtube.py',"--file","./podcasts/%s" % (podcast_video_file),"--title","%s" % (podcast_title), "--description", "%s" % (podcast_description)])
   else:
